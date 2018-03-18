@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // test dependencies
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.mockito:mockito-core:2.+"
+    testImplementation 'android.arch.core:core-testing:1.0.0-rc1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    // dagger 2 for dependency injection
+    implementation "com.google.dagger:dagger:2.11"
+    implementation "com.google.dagger:dagger-android:2.11"
+    implementation "com.google.dagger:dagger-android-support:2.11"
+    kapt "com.google.dagger:dagger-compiler:2.11"
+    kapt "com.google.dagger:dagger-android-processor:2.11"
+
+    // android architecture component library
+    implementation 'android.arch.lifecycle:extensions:1.0.0-rc1'
+
+    // rxandroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    // Retrofit 2 for network tasks
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+}
