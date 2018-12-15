@@ -1,7 +1,7 @@
 package com.example.dagger_retrofit_mvvm.di.modules
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.dagger_retrofit_mvvm.ui.github.GithubActivityViewModel
 import com.example.dagger_retrofit_mvvm.di.ViewModelFactory
 import com.example.dagger_retrofit_mvvm.di.ViewModelKey

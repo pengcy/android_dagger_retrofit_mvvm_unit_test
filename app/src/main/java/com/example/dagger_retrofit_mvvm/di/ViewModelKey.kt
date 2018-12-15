@@ -2,7 +2,7 @@ package com.example.dagger_retrofit_mvvm.di
 
 import dagger.MapKey
 import kotlin.reflect.KClass
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 
 @MustBeDocumented
 @Target(AnnotationTarget.FUNCTION)

@@ -1,7 +1,7 @@
 package com.example.dagger_retrofit_mvvm
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule
-import android.arch.lifecycle.Observer
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.Observer
 import com.example.dagger_retrofit_mvvm.data.GithubAccount
 import com.example.dagger_retrofit_mvvm.data.GithubApi
 import com.example.dagger_retrofit_mvvm.ui.github.GithubFragmentViewModel
